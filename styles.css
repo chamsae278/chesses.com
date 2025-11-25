@@ -1,68 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
 .page-container {
-    display: flex; 
-    position: relative;
-    min-height: 100vh;
+  display: flex;
+  position: relative;
+  min-height: 100vh;
 }
 .sidebar {
-    width: 210px; 
-    
-    background-color: #403d3d; 
-    
-    color: rgb(255, 255, 255); 
-    
-    position: fixed; 
-    top: 0;
-    left: 0;
-    height: 100%;
+  width: 210px;
+
+  background-color: #403d3d;
+
+  color: rgb(255, 255, 255);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar a {
-    display: block; 
-    padding: 15px 20px;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.2s;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.2s;
 }
 
 .sidebar a:hover {
-    background-color: #504f4f;
+  background-color: #676767;
 }
 
 .content {
-   
-    flex-grow: 1; 
-    
-   
-    margin-left: 260px;
-    
-    transition: margin-left 0.2s ease-in-out;
-    
+  background-color: #a6aaab;
+  flex-grow: 1;
+  padding: 40px;
+
+  margin-left: 210px;
 }
 .hamburger-btn {
-    position: fixed; 
-    top: 20px;
-    left: 230px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 230px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  z-index: 200;
 }
 
-.sidebar {
-    
-    transform: translateX(0); 
-    
-    transition: transform 0.2s ease-in-out; 
-}
-.content.shifted {
-    margin-left: 50px; 
-}
 .sidebar.close {
-    transform: translateX(-210px); 
+  display: none;
+}
+
+/* 사이드바가 닫혔을 때 버튼 위치 */
+.sidebar.close ~ .hamburger-btn {
+  left: 20px; /* 왼쪽 벽에 붙음 */
+}
+
+/* 사이드바가 닫혔을 때 콘텐츠 영역 확장 */
+.content.shifted {
+  margin-left: 0; /* 여백 제거하여 전체 화면 사용 */
+}
+
+/* 체스판 컨테이너 스타일 */
+#myBoard {
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+}
+
+/* 상태 텍스트 스타일 */
+#status {
+  font-weight: bold;
+  color: black; /* 강조색 */
 }

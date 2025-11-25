@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>제목</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chesses.com</title>
     <link rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="chessboard.min.css" />
   </head>
   <body>
     <div class="page-container">
@@ -16,11 +20,26 @@
           </ul>
         </nav>
       </aside>
+
       <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+
       <main class="content" id="mainContent">
+        <div id="myBoard" style="width: 400px"></div>
+        <p>상태: <span id="status">게임 시작 대기</span></p>
+
+        <div id="pgn-container">
+          <h3>Moves (기록)</h3>
+          <pre id="pgn-text"></pre>
         </div>
       </main>
     </div>
+
+    <script src="jquery.min.js"></script>
+
+    <script src="chess.min.js"></script>
+
+    <script src="chessboard.min.js"></script>
+
     <script src="script.js"></script>
   </body>
 </html>
